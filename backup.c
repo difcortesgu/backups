@@ -11,7 +11,11 @@
 # define FAILURE -1
 
 int main(int argc, char **argv){
-    
+    if(argc < 2){
+        printf("Debe ingresar el nombre del archivo\n");
+        exit(1);
+    }
+
     //OBTENER LA FECHA Y HORA
     time_t rawtime = time(NULL);
     if(rawtime == -1){perror("Error obteniendo el tiempo");exit(EXIT_FAILURE);}
